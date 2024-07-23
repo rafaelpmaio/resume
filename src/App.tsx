@@ -1,14 +1,15 @@
 import { Box } from "@mui/material";
 import { AboutMe } from "components/AboutMe";
-import { Portfolio } from "components/Portfolio";
-
-
+import portfolio from "assets/portfolio.json";
+import { ProjectDialog } from "components/ProjectDialog";
 
 function App() {
   return (
     <Box component="main">
       {/* <AboutMe />
-      <Portfolio /> */}
+      <Box component="section">
+            {portfolio.map(project => <ProjectDialog project={project} />)}
+        </Box> */}
     </Box>
   );
 }

@@ -1,0 +1,38 @@
+[
+    {
+        "title": "MTG Collections",
+        "about": "Webapp inspirado em um hobby da infância! Acompanhar o progresso da sua coleção pessoal no jogo de cartas de Magic the Gathering com facilidade e organização.",
+        "goal": "Desenvolver um aplicativo que forneça dados atualizados sobre as cartas e seus preços, permitindo ao usuário salvar e gerenciar seu progresso de maneira intuitiva e eficiente.",
+        "description":"Este projeto foi criado utilizando React e TypeScript, com a biblioteca Axios para gerenciar requisições HTTP e Material-UI para uma interface visual moderna e responsiva. A aplicação foi projetada para proporcionar uma experiência de usuário fluida e visualmente atraente.",
+        "tools": [
+            "NodeJS", "React", "Typescript", "Express", "Mongoose", "React-Router-Dom"
+        ],
+        "image":"https://i.ibb.co/3s8RqZQ/mtg-collections.png",
+        "vercel": "https://mtg-collection.vercel.app/",
+        "github": "github.com/rafaelpmaio/mtg-collection"
+    },
+    {
+        "title": "Drinks Datasheet",
+        "about": "Aplicativo WEB que auxilia na criação, precificação e organização de drinks em coleções.",
+        "goal": "Facilitar o controle de custo dos gestores através do acompanhamento no custo na produção dos drinks, ajudando em sua precificação. O app também auxilia na padronização da produção drinks o que reforça um maior senso de unidade dentro da equipe.",
+        "description":"Aplicação Monorepo criada com NodeJS para a construção do servidor REST API que executa comandos CRUD e React para elaboração da interface gráfica para o usuário.",
+        "tools": [
+            "NodeJS", "React", "Typescript", "Express", "Mongoose"
+        ],
+        "image":"https://i.ibb.co/7ywy5gB/drink-Datasheet-App.png",
+        "vercel": "https://drinks-datasheet-client.vercel.app/",
+        "github": "https://github.com/rafaelpmaio/drinks-datasheet?tab=readme-ov-file#drinks-datasheet-"
+    },
+    {
+        "title": "MTG Sets Builder",
+        "about": "Aplicativo que requisita dados de coleções de MTG e estrutura no formato JSON.",
+        "goal": "Este projeto foi elaborado para enfrentar um desafio significativo enfrentado pelo aplicativo MTG Collection: tempo de carregamento prolongado. Assumindo a tarefa crucial de lidar com a solicitação HTTP para arquivos de dados extensos da API mtgJson, ele filtra meticulosamente os dados com base no intervalo de datas de lançamento das coleções selecionado e os estrutura de forma eficiente em um arquivo JSON contendo objetos ISet personalizados para integração no aplicativo final.",
+        "description":"Aplicação criada utilizando React junto com Typescript, para a requisição HTTP foi utilizado a biblioteca Axios, e material Material-UI para a criação dos componentes.",
+        "tools": [
+            "React", "Typescript", "Axios", "Material-UI"
+        ],
+        "image":"https://i.ibb.co/3s8RqZQ/mtg-collections.png",
+        "vercel": "https://mtg-sets-builder.vercel.app/",
+        "github": "github.com/rafaelpmaio/mtg-sets-builder"
+    }
+]

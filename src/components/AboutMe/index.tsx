@@ -1,4 +1,10 @@
 import { Box, Stack, Typography } from "@mui/material"
+import styled from "styled-components"
+
+const Image = styled.img`
+border-radius: 100%;
+width:200px;
+`
 
 export const AboutMe = () => {
     return (
@@ -11,10 +17,9 @@ export const AboutMe = () => {
         >
             <Typography variant="h1" width="130px" padding={1} sx={{ fontSize: "20px", }}> ABOUT ME </Typography>
             <Stack direction="row" gap={5} >
-                <img
+                <Image
                     src="https://avatars.githubusercontent.com/u/120125116?v=4"
                     alt="foto perfil"
-                    width="200px"
                 />
                 <Stack width={800}>
                     <Typography variant="body1">Olá! Meu nome é Rafael. Eu sou um Desenvolvedor Front-End</Typography>

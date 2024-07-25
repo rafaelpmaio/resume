@@ -4,14 +4,15 @@ import {
     Card,
     CardActions,
     CardContent,
-    CardMedia,
     Dialog,
     DialogActions,
     DialogContent,
     DialogContentText,
     DialogTitle,
-    IconButton,
-    Popover,
+    Fade,
+    Grid,
+    Grow,
+    Stack,
     Typography
 } from "@mui/material"
 import IProject from "interfaces/IProject"
@@ -19,40 +20,24 @@ import { useState } from "react"
 import styled from "styled-components"
 
 const Image = styled.img`
+    height: 400px;
     width: 500px;
-    transition: transform 0.3s ease-in-out;
+    background-color: gray;
+    object-fit: cover;
+    border-radius: 5px;
 
-    &:hover{
-        transform: rotate(5deg);
-    }
 `
 
 export const ProjectDialog = ({ project }: { project: IProject }) => {
-    // const [open, setOpen] = useState(false)
-
-    const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
-
-    const handleClick: React.MouseEventHandler<HTMLDivElement> = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
-
-    const open = Boolean(anchorEl);
-    const id = open ? 'simple-popover' : undefined;
+    const [open, setOpen] = useState(false)
 
     return (
-        <Box >
-            {/* <Image src={project.image} alt="" onClick={() => setOpen(true)} /> */}
+        <Grid item xs={12} sm={4}>
             <Card sx={{
-                width: "500px"
             }}>
-                {/* <CardMedia component="img" src={project.image} /> */}
-                <CardContent onClick={handleClick} >
+                <CardContent onClick={() => setOpen(true)} >
                     <Typography gutterBottom variant="h5">{project.title}</Typography>
-                    <Typography variant="body2" color="text.secondary">{project.about}</Typography>
+                    badges
                 </CardContent>
                 <CardActions>
                     <Button>Demo</Button>
@@ -60,39 +45,36 @@ export const ProjectDialog = ({ project }: { project: IProject }) => {
                 </CardActions>
             </Card>
 
-            <Popover
-                id={id}
-                open={open}
-                anchorEl={anchorEl}
-                onClose={handleClose}
-                anchorOrigin={{
-                    vertical: 'bottom',
-                    horizontal: 'center',
-                }}
-                transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'center',
-                }}
-            ></Popover>
-
-            {/* <Dialog
+            <Dialog
                 open={open}
                 onClose={() => setOpen(false)}
                 aria-labelledby="dialog-title"
                 aria-describedby="dialog-description"
+                fullWidth
+                maxWidth="md"
             >
-                <DialogTitle id="dialog-title">
-                    {project.title}
-                </DialogTitle>
                 <DialogContent>
-                    <DialogContentText id="dialog-description">
-                        {project.description}
-                    </DialogContentText>
+                    <Stack direction="row" gap={2}>
+                        <Grow in={open} timeout={1500}>
+                            <Image
+                            // src={project.image}
+                            />
+                        </Grow>
+                        <Stack>
+                            <DialogTitle id="dialog-title">
+                                {project.title}
+                            </DialogTitle>
+                            <DialogContentText id="dialog-description">
+                                {project.description}
+                            </DialogContentText>
+                        </Stack>
+                    </Stack>
                 </DialogContent>
                 <DialogActions>
-                    <Button autoFocus>teste</Button>
+                    <Button autoFocus onClick={() => setOpen(false)}>teste</Button>
                 </DialogActions>
-            </Dialog> */}
-        </Box>
+            </Dialog>
+        </Grid >
     )
 }
+

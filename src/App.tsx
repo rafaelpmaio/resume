@@ -6,7 +6,7 @@ import 'react-awesome-slider/dist/styles.css';
 
 function App() {
   return (
-    <Box component="main">
+    <Box component="main" >
       <AwesomeSlider
         bullets={false}
         fillParent

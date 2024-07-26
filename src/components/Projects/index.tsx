@@ -7,12 +7,26 @@ export const Projects = () => {
         <Box
             display="flex"
             flexDirection="column"
-            // alignItems="center"
-            gap={2}
+            paddingTop={10}
+            height="100vh"
+            gap={10}
         >
-            <Typography variant="h3" color="white">
-                Projects
-            </Typography>
+            <Box component="header">
+                <Typography
+                    variant="h3"
+                    color="#cacaca"
+                    fontWeight={700}
+                    gutterBottom
+                    sx={{
+                        textShadow: " 2px 2px 0 rgba(0, 0, 0, 0.5)"
+                    }}
+                >
+                    Projetos
+                </Typography>
+                <Typography variant="body1" color="#cacaca">
+                    Projetos
+                </Typography>
+            </Box>
             <Grid container spacing={2}>
                 {portfolioArr.map(project => <ProjectDialog project={project} />)}
             </Grid>

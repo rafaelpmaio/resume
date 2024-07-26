@@ -1,15 +1,9 @@
-import { Box, Fade, IconButton, Stack, Typography } from "@mui/material"
-import styled from "styled-components"
+import { Box, Stack, Typography } from "@mui/material"
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { TypingAnimationDiv } from "animations";
 
-const Image = styled.img`
-border-radius: 100%;
-width:200px;
-`
-{/* <Image
-src="https://avatars.githubusercontent.com/u/120125116?v=4"
-alt="foto perfil"
-/> */}
+
+
 
 export const AboutMe = () => {
     return (
@@ -20,22 +14,22 @@ export const AboutMe = () => {
             gap={2}
             textAlign="center"
         >
-            <Stack direction="column" width={800}>
-                {/* <Fade in={true} timeout={300}> */}
-                    <Typography
-                        variant="h4"
-                        color="white"
-                        gutterBottom
-                    >
-                        Olá, Meu nome é Rafael de Paiva.
-                    </Typography>
-                {/* </Fade> */}
-                    <Typography variant="body1" color="#eeeeee" gutterBottom>
-                        Em 2022, decidi fazer uma transição de carreira impulsionado pelo crescente interesse em tecnologia.
-                    </Typography>
-                    <Typography variant="body1" color="#eeeeee">
-                        Desde então, tenho me dedicado ao estudo e desenvolvimento de projetos pessoais usando React, JavaScript/TypeScript e Node.js. Desenvolvi interfaces responsivas com React, focadas em UX, e implementei integrações com servidores criados em Node.js para consumir APIs RESTful.
-                    </Typography>
+            <Stack direction="column" maxWidth={800}>
+                <Typography
+                    variant="h4"
+                    color="#cacaca"
+                    fontWeight={700}
+                    gutterBottom
+                    sx={{
+                        textShadow:" 2px 2px 0 rgba(0, 0, 0, 0.5)"
+                    }}
+                >
+                    Olá, Meu nome é Rafael de Paiva.
+                </Typography>
+                <Typography variant="body1" color="#cacaca" gutterBottom>
+                    Sou um desenvolvedor Front-End, utilizo React, JavaScript/TypeScript e Node.js.
+                    Desenvolvi interfaces responsivas com React, focadas em UX, e implementei integrações com servidores criados em Node.js para consumir APIs RESTful
+                </Typography>
             </Stack>
         </Box>
     )

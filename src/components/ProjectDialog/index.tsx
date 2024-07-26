@@ -1,5 +1,4 @@
 import {
-    Box,
     Button,
     Card,
     CardActions,
@@ -9,12 +8,11 @@ import {
     DialogContent,
     DialogContentText,
     DialogTitle,
-    Fade,
     Grid,
-    Grow,
     Stack,
     Typography
 } from "@mui/material"
+import { GrowHorizontalDiv, PopUpDiv } from "animations"
 import IProject from "interfaces/IProject"
 import { useState } from "react"
 import styled from "styled-components"
@@ -48,6 +46,7 @@ export const ProjectDialog = ({ project }: { project: IProject }) => {
             <Dialog
                 open={open}
                 onClose={() => setOpen(false)}
+                TransitionComponent={GrowHorizontalDiv}
                 aria-labelledby="dialog-title"
                 aria-describedby="dialog-description"
                 fullWidth
@@ -55,11 +54,11 @@ export const ProjectDialog = ({ project }: { project: IProject }) => {
             >
                 <DialogContent>
                     <Stack direction="row" gap={2}>
-                        <Grow in={open} timeout={1500}>
+                        <PopUpDiv>
                             <Image
                             // src={project.image}
                             />
-                        </Grow>
+                        </PopUpDiv>
                         <Stack>
                             <DialogTitle id="dialog-title">
                                 {project.title}

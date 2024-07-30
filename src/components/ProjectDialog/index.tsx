@@ -1,8 +1,10 @@
 import {
+    Box,
     Button,
     Card,
-    CardActions,
     CardContent,
+    CardMedia,
+    Chip,
     Dialog,
     DialogActions,
     DialogContent,
@@ -16,6 +18,7 @@ import { GrowHorizontalDiv, PopUpDiv } from "animations"
 import IProject from "interfaces/IProject"
 import { useState } from "react"
 import styled from "styled-components"
+import image from 'assets/images/CojYiivGDp.jpg'
 
 const Image = styled.img`
     height: 400px;
@@ -31,16 +34,26 @@ export const ProjectDialog = ({ project }: { project: IProject }) => {
 
     return (
         <Grid item xs={12} sm={4}>
-            <Card sx={{
-            }}>
-                <CardContent onClick={() => setOpen(true)} >
-                    <Typography gutterBottom variant="h5">{project.title}</Typography>
-                    badges
+            <Card
+                onClick={() => setOpen(true)}
+                sx={{ backgroundColor: "transparent" }}
+            >
+                <CardMedia component="img" src={image}/>
+                <CardContent  >
+                    <Typography
+                        variant="h5"
+                        fontWeight={700}
+                        color="white"
+                        textTransform="uppercase"
+                        gutterBottom
+                    >
+                        {project.title}
+                    </Typography>
+                    <Box >
+                        {project.tools.map(tool => 
+                        <Chip label={tool} variant="outlined" size="small" sx={{color:"#cacaca"}}/>)}
+                    </Box>
                 </CardContent>
-                <CardActions>
-                    <Button>Demo</Button>
-                    <Button>Github</Button>
-                </CardActions>
             </Card>
 
             <Dialog

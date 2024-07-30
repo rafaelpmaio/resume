@@ -1,15 +1,14 @@
-import { Box, Grid, Typography } from "@mui/material"
+import { Box, Divider, Grid, Typography } from "@mui/material"
 import portfolioArr from "assets/portfolio.json";
 import { ProjectDialog } from "components/ProjectDialog";
 
 export const Projects = () => {
     return (
         <Box
-            display="flex"
-            flexDirection="column"
-            paddingTop={10}
-            height="100vh"
-            gap={10}
+            component="section"
+            sx={{
+                height: '100vh',
+            }}
         >
             <Box component="header">
                 <Typography
@@ -21,15 +20,19 @@ export const Projects = () => {
                         textShadow: " 2px 2px 0 rgba(0, 0, 0, 0.5)"
                     }}
                 >
-                    Projetos
+                    Portfolio
                 </Typography>
-                <Typography variant="body1" color="#cacaca">
-                    Projetos
-                </Typography>
+                <Divider sx={{
+                    borderColor: "white",
+                    marginY: 2,
+                    opacity: .25
+
+                }} />
             </Box>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} direction="column">
                 {portfolioArr.map(project => <ProjectDialog project={project} />)}
             </Grid>
         </Box>
+
     )
 }

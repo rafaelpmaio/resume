@@ -8,6 +8,7 @@ import { TypingAnimationDiv } from "animations";
 export const AboutMe = () => {
     return (
         <Box
+            component="section"
             display="flex"
             flexDirection="column"
             alignItems="center"
@@ -21,14 +22,16 @@ export const AboutMe = () => {
                     fontWeight={700}
                     gutterBottom
                     sx={{
-                        textShadow:" 2px 2px 0 rgba(0, 0, 0, 0.5)"
+                        textShadow: " 2px 2px 0 rgba(0, 0, 0, 0.5)"
                     }}
                 >
                     Olá, Meu nome é Rafael de Paiva.
                 </Typography>
-                <Typography variant="body1" color="#cacaca" gutterBottom>
-                    Sou um desenvolvedor Front-End, utilizo React, JavaScript/TypeScript e Node.js.
-                    Desenvolvi interfaces responsivas com React, focadas em UX, e implementei integrações com servidores criados em Node.js para consumir APIs RESTful
+                <Typography variant="h5" color="#cacaca" fontWeight={700}
+                    sx={{
+                        textShadow: " 2px 2px 0 rgba(0, 0, 0, 0.5)"
+                    }}>
+                    Sou um Desenvolvedor Front-End.
                 </Typography>
             </Stack>
         </Box>

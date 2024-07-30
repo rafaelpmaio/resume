@@ -29,17 +29,19 @@ const Image = styled.img`
 
 `
 
-export const ProjectDialog = ({ project }: { project: IProject }) => {
+export const ProjectDialog = ({ project, index }: { project: IProject, index: number }) => {
     const [open, setOpen] = useState(false)
 
     return (
-        <Grid item xs={12} sm={4}>
-            <Card
+        <Stack spacing={2} height="100vh" >
+            <Stack
+            alignItems="center"
                 onClick={() => setOpen(true)}
-                sx={{ backgroundColor: "transparent" }}
+                direction={index % 2 === 0 ? "row" : "row-reverse"}
+                spacing={6}
             >
-                <CardMedia component="img" src={image}/>
-                <CardContent  >
+                <img src={image} height={600}/>
+                <Stack>
                     <Typography
                         variant="h5"
                         fontWeight={700}
@@ -50,11 +52,11 @@ export const ProjectDialog = ({ project }: { project: IProject }) => {
                         {project.title}
                     </Typography>
                     <Box >
-                        {project.tools.map(tool => 
-                        <Chip label={tool} variant="outlined" size="small" sx={{color:"#cacaca"}}/>)}
+                        {project.tools.map(tool =>
+                            <Chip label={tool} variant="outlined" size="small" sx={{ color: "#cacaca" }} key={tool} />)}
                     </Box>
-                </CardContent>
-            </Card>
+                </Stack>
+            </Stack>
 
             <Dialog
                 open={open}
@@ -86,7 +88,7 @@ export const ProjectDialog = ({ project }: { project: IProject }) => {
                     <Button autoFocus onClick={() => setOpen(false)}>teste</Button>
                 </DialogActions>
             </Dialog>
-        </Grid >
+        </Stack >
     )
 }
 
